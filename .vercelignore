@@ -1,0 +1,9 @@
+old-site/
+pictures/
+node_modules/
+.next/
+.claude/
+.agents/
+.augment/
+skills/
+skills-lock.json
