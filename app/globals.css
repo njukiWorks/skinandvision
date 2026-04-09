@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --color-gold:        #ff8835;
+  --color-gold-light:  #ffaa6b;
+  --color-gold-muted:  #fff0e6;
+  --color-ivory:       #faf8f5;
+  --color-linen:       #f2ede6;
+  --color-stone:       #e8e0d4;
+  --color-taupe:       #b0a090;
+  --color-charcoal:    #2a2420;
+  --color-ink:         #1a1614;
+  --color-obsidian:    #0f0d0c;
+}
+
+@theme inline {
+  --color-gold:        var(--color-gold);
+  --color-gold-light:  var(--color-gold-light);
+  --color-gold-muted:  var(--color-gold-muted);
+  --color-ivory:       var(--color-ivory);
+  --color-linen:       var(--color-linen);
+  --color-stone:       var(--color-stone);
+  --color-taupe:       var(--color-taupe);
+  --color-charcoal:    var(--color-charcoal);
+  --color-ink:         var(--color-ink);
+  --color-obsidian:    var(--color-obsidian);
+
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans:    var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  --font-body:    var(--font-lora), 'Lora', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold-muted);
+  color: var(--color-charcoal);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-linen); }
+::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 3px; }
