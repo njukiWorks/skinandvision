@@ -8,11 +8,20 @@ export default function NewsletterSignup() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim()) return;
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
-    setEmail("");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (!res.ok) throw new Error("Aanmelden mislukt");
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -44,23 +53,30 @@ export default function NewsletterSignup() {
             <p className="text-white/80 text-sm">Bedankt! U ontvangt binnenkort een bevestiging.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Uw e-mailadres"
-              required
-              className="flex-1 bg-white/8 border border-white/15 rounded-full px-6 py-3.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#ff8835] focus:bg-white/12 transition-all duration-200"
-            />
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="bg-[#ff8835] text-white font-sans font-semibold rounded-full px-8 py-3.5 text-sm hover:bg-[#e8773a] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,136,53,0.4)] transition-all duration-300 disabled:opacity-60 whitespace-nowrap"
-            >
-              {status === "loading" ? "Bezig..." : "Aanmelden"}
-            </button>
-          </form>
+          <>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Uw e-mailadres"
+                required
+                className="flex-1 bg-white/8 border border-white/15 rounded-full px-6 py-3.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#ff8835] focus:bg-white/12 transition-all duration-200"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="bg-[#ff8835] text-white font-sans font-semibold rounded-full px-8 py-3.5 text-sm hover:bg-[#e8773a] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,136,53,0.4)] transition-all duration-300 disabled:opacity-60 whitespace-nowrap"
+              >
+                {status === "loading" ? "Bezig..." : "Aanmelden"}
+              </button>
+            </form>
+            {status === "error" && (
+              <p className="text-red-400 text-xs mt-3">
+                Aanmelden mislukt. Probeer het opnieuw.
+              </p>
+            )}
+          </>
         )}
       </div>
     </section>

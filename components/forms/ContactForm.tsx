@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 const schema = z.object({
@@ -9,7 +10,7 @@ const schema = z.object({
   email: z.string().email("Ongeldig e-mailadres"),
   telefoon: z.string().optional(),
   behandeling: z.string().optional(),
-  bericht: z.string().min(10, "Bericht is te kort"),
+  bericht: z.string().min(10, "Bericht is te kort (minimaal 10 tekens)"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -30,14 +31,17 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   async function onSubmit(data: FormData) {
     setStatus("loading");
     try {
-      // Placeholder — wire to Convex when backend is set up
-      await new Promise((r) => setTimeout(r, 1000));
-      console.log("Contact form submission:", data);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Verzenden mislukt");
       setStatus("success");
       reset();
     } catch {
@@ -60,14 +64,14 @@ export default function ContactForm() {
     "w-full bg-white border border-[#e8e0d4] rounded-xl px-4 py-3.5 text-sm text-[#2a2420] placeholder:text-[#c0b0a0] focus:outline-none focus:border-[#ff8835] focus:ring-2 focus:ring-[#ff8835]/10 transition-all duration-200 shadow-sm";
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5" noValidate>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
             Naam <span className="text-[#ff8835]">*</span>
           </label>
           <input
-            {...register("naam", { required: "Vul uw naam in" })}
+            {...register("naam")}
             placeholder="Uw volledige naam"
             className={inputClass}
           />
@@ -78,7 +82,7 @@ export default function ContactForm() {
             E-mailadres <span className="text-[#ff8835]">*</span>
           </label>
           <input
-            {...register("email", { required: true })}
+            {...register("email")}
             type="email"
             placeholder="uw@email.nl"
             className={inputClass}
@@ -115,7 +119,7 @@ export default function ContactForm() {
           Bericht <span className="text-[#ff8835]">*</span>
         </label>
         <textarea
-          {...register("bericht", { required: true })}
+          {...register("bericht")}
           rows={5}
           placeholder="Uw vraag of opmerking..."
           className={`${inputClass} resize-none`}
@@ -125,7 +129,8 @@ export default function ContactForm() {
 
       {status === "error" && (
         <p className="text-red-500 text-sm">
-          Er is iets misgegaan. Probeer het opnieuw of bel ons direct.
+          Er is iets misgegaan. Probeer het opnieuw of bel ons direct op{" "}
+          <a href="tel:+31646096641" className="underline">+31 6 4609 6641</a>.
         </p>
       )}
 
