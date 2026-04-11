@@ -23,7 +23,20 @@ const behandelingOpties = [
   "Nog niet zeker",
 ];
 
-export default function ContactForm() {
+const treatmentOptionsEn = [
+  "Eyelid Correction",
+  "Botox Treatments",
+  "Ptosis Correction",
+  "Other treatment",
+  "Not sure yet",
+];
+
+interface ContactFormProps {
+  lang?: string;
+}
+
+export default function ContactForm({ lang = "nl" }: ContactFormProps) {
+  const en = lang === "en";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const {
@@ -52,9 +65,11 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="bg-[#4a7c59]/10 border border-[#4a7c59]/20 rounded-2xl p-8 text-center">
-        <p className="text-[#4a7c59] font-semibold mb-2">Uw bericht is ontvangen</p>
+        <p className="text-[#4a7c59] font-semibold mb-2">
+          {en ? "Your message has been received" : "Uw bericht is ontvangen"}
+        </p>
         <p className="text-[#b0a090] text-sm">
-          Wij nemen binnen 1–2 werkdagen contact met u op.
+          {en ? "We will contact you within 1–2 business days." : "Wij nemen binnen 1–2 werkdagen contact met u op."}
         </p>
       </div>
     );
@@ -68,23 +83,23 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
-            Naam <span className="text-[#ff8835]">*</span>
+            {en ? "Name" : "Naam"} <span className="text-[#ff8835]">*</span>
           </label>
           <input
             {...register("naam")}
-            placeholder="Uw volledige naam"
+            placeholder={en ? "Your full name" : "Uw volledige naam"}
             className={inputClass}
           />
           {errors.naam && <p className="text-red-500 text-xs mt-1">{errors.naam.message}</p>}
         </div>
         <div>
           <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
-            E-mailadres <span className="text-[#ff8835]">*</span>
+            {en ? "Email address" : "E-mailadres"} <span className="text-[#ff8835]">*</span>
           </label>
           <input
             {...register("email")}
             type="email"
-            placeholder="uw@email.nl"
+            placeholder="your@email.com"
             className={inputClass}
           />
           {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -93,7 +108,9 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-xs text-[#2a2420] font-medium mb-1.5">Telefoonnummer</label>
+          <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
+            {en ? "Phone number" : "Telefoonnummer"}
+          </label>
           <input
             {...register("telefoon")}
             type="tel"
@@ -103,11 +120,11 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
-            Behandeling interesse
+            {en ? "Treatment of interest" : "Behandeling interesse"}
           </label>
           <select {...register("behandeling")} className={inputClass}>
-            <option value="">Selecteer behandeling</option>
-            {behandelingOpties.map((o) => (
+            <option value="">{en ? "Select treatment" : "Selecteer behandeling"}</option>
+            {(en ? treatmentOptionsEn : behandelingOpties).map((o) => (
               <option key={o} value={o}>{o}</option>
             ))}
           </select>
@@ -116,12 +133,12 @@ export default function ContactForm() {
 
       <div>
         <label className="block text-xs text-[#2a2420] font-medium mb-1.5">
-          Bericht <span className="text-[#ff8835]">*</span>
+          {en ? "Message" : "Bericht"} <span className="text-[#ff8835]">*</span>
         </label>
         <textarea
           {...register("bericht")}
           rows={5}
-          placeholder="Uw vraag of opmerking..."
+          placeholder={en ? "Your question or comment..." : "Uw vraag of opmerking..."}
           className={`${inputClass} resize-none`}
         />
         {errors.bericht && <p className="text-red-500 text-xs mt-1">{errors.bericht.message}</p>}
@@ -129,8 +146,15 @@ export default function ContactForm() {
 
       {status === "error" && (
         <p className="text-red-500 text-sm">
-          Er is iets misgegaan. Probeer het opnieuw of bel ons direct op{" "}
-          <a href="tel:+31646096641" className="underline">+31 6 4609 6641</a>.
+          {en ? (
+            <>Something went wrong. Please try again or call us at{" "}
+              <a href="tel:+31646096641" className="underline">+31 6 4609 6641</a>.
+            </>
+          ) : (
+            <>Er is iets misgegaan. Probeer het opnieuw of bel ons direct op{" "}
+              <a href="tel:+31646096641" className="underline">+31 6 4609 6641</a>.
+            </>
+          )}
         </p>
       )}
 
@@ -139,7 +163,9 @@ export default function ContactForm() {
         disabled={status === "loading"}
         className="bg-[#ff8835] text-white font-sans font-medium rounded-full px-8 py-3.5 text-sm hover:bg-[#ffaa6b] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 w-full sm:w-fit"
       >
-        {status === "loading" ? "Verzenden..." : "Bericht versturen"}
+        {status === "loading"
+          ? (en ? "Sending..." : "Verzenden...")
+          : (en ? "Send message" : "Bericht versturen")}
       </button>
     </form>
   );

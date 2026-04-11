@@ -9,7 +9,7 @@ import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
 
-const navLinks = [
+const navLinksNl = [
   { label: "Home", href: "/" },
   { label: "Over Ons", href: "/over-ons" },
   {
@@ -30,6 +30,27 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const navLinksEn = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/over-ons" },
+  {
+    label: "Treatments",
+    href: "/behandelingen",
+    children: [
+      { label: "Eyelid Correction", href: "/behandelingen/ooglidcorrectie" },
+      { label: "Botox Treatments", href: "/behandelingen/botoxbehandelingen" },
+      { label: "Ptosis Correction", href: "/behandelingen/ptosis-correctie" },
+      { label: "Other Treatments", href: "/behandelingen/andere-behandelingen" },
+    ],
+  },
+  { label: "Insurance & Billing", href: "/vergoeding-declaratie" },
+  { label: "For Referrers", href: "/voor-verwijzers" },
+  { label: "Pricing", href: "/tarieven" },
+  { label: "Blog", href: "/blog" },
+  { label: "Reviews", href: "/ervaringen" },
+  { label: "Contact", href: "/contact" },
+];
+
 interface NavbarProps {
   lang?: string;
 }
@@ -39,7 +60,8 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const root = lang === "nl" ? "" : "/en";
+  const root = lang === "en" ? "/en" : "";
+  const navLinks = lang === "en" ? navLinksEn : navLinksNl;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -58,25 +80,85 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
   }, [pathname]);
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/nl" || pathname === "/";
+    if (href === "/") {
+      return pathname === "/nl" || pathname === "/" || pathname === "/en";
+    }
+    if (lang === "en") return pathname.startsWith(`/en${href}`);
     return pathname.startsWith(href);
   };
 
+  // Map current page to the equivalent in the other language
   const otherLangPath = (() => {
     if (lang === "nl") {
-      // Home page → English home
+      // Dutch home → English home
       if (pathname === "/nl" || pathname === "/") return "/en";
-      // Inner pages: map to /en/<path> if an EN equivalent exists,
-      // otherwise fall back to /en
-      return "/en";
+      // Dutch inner pages are at root (e.g. /behandelingen) — map to /en/behandelingen
+      const path = pathname.startsWith("/nl/") ? pathname.slice(3) : pathname;
+      return `/en${path}`;
     } else {
       // English home → Dutch home
       if (pathname === "/en" || pathname === "/en/") return "/nl";
-      // Any /en/<path> → strip prefix
+      // Strip /en prefix to get Dutch root path (e.g. /en/behandelingen → /behandelingen)
       const stripped = pathname.replace(/^\/en/, "");
       return stripped || "/nl";
     }
   })();
+
+  const LangSwitcher = ({ className }: { className?: string }) => (
+    <div className={`flex items-center gap-1 ${className ?? ""}`}>
+      {lang === "nl" ? (
+        <span className="text-xs font-medium px-2 py-0.5 text-[#ff8835]">NL</span>
+      ) : (
+        <Link
+          href={otherLangPath}
+          onClick={() => setMenuOpen(false)}
+          className="text-xs font-medium px-2 py-0.5 text-white/50 hover:text-white transition-colors"
+        >
+          NL
+        </Link>
+      )}
+      <span className="text-white/30 text-xs">|</span>
+      {lang === "en" ? (
+        <span className="text-xs font-medium px-2 py-0.5 text-[#ff8835]">EN</span>
+      ) : (
+        <Link
+          href={otherLangPath}
+          onClick={() => setMenuOpen(false)}
+          className="text-xs font-medium px-2 py-0.5 text-white/50 hover:text-white transition-colors"
+        >
+          EN
+        </Link>
+      )}
+    </div>
+  );
+
+  const MobileLangSwitcher = ({ className }: { className?: string }) => (
+    <div className={`flex items-center gap-1 text-xs font-medium ${className ?? ""}`}>
+      {lang === "nl" ? (
+        <span className="text-[#ff8835]">NL</span>
+      ) : (
+        <Link
+          href={otherLangPath}
+          onClick={() => setMenuOpen(false)}
+          className="text-[#b0a090] hover:text-[#ff8835] transition-colors"
+        >
+          NL
+        </Link>
+      )}
+      <span className="text-[#e8e0d4]">|</span>
+      {lang === "en" ? (
+        <span className="text-[#ff8835]">EN</span>
+      ) : (
+        <Link
+          href={otherLangPath}
+          onClick={() => setMenuOpen(false)}
+          className="text-[#b0a090] hover:text-[#ff8835] transition-colors"
+        >
+          EN
+        </Link>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -111,10 +193,8 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
               </a>
             </div>
             {/* Language switcher */}
-            <div className="flex items-center gap-1 ml-2 border-l border-white/20 pl-4">
-              <span className={`text-xs font-medium px-2 py-0.5 rounded ${lang === "nl" ? "text-[#ff8835]" : "text-white/50 hover:text-white cursor-pointer"} transition-colors`}>NL</span>
-              <span className="text-white/30 text-xs">|</span>
-              <Link href={otherLangPath} className={`text-xs font-medium px-2 py-0.5 rounded ${lang === "en" ? "text-[#ff8835]" : "text-white/50 hover:text-white"} transition-colors`}>EN</Link>
+            <div className="ml-2 border-l border-white/20 pl-4">
+              <LangSwitcher />
             </div>
           </div>
         </div>
@@ -130,7 +210,7 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href={`/nl`} className="flex items-center shrink-0">
+          <Link href={lang === "en" ? "/en" : "/nl"} className="flex items-center shrink-0">
             <Image
               src="/logo/main-logo-no-bg.png"
               alt="Skin & Vision Clinic"
@@ -151,7 +231,7 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
-                  href={link.children ? link.href : `${root}${link.href}`}
+                  href={`${root}${link.href}`}
                   className={`relative flex items-center gap-1 text-[13px] font-sans font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive(link.href)
                       ? "text-[#ff8835]"
@@ -188,10 +268,8 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
           {/* Right: CTA + mobile lang + hamburger */}
           <div className="flex items-center gap-3">
             {/* Mobile lang switcher */}
-            <div className="xl:hidden flex items-center gap-1 text-xs font-medium">
-              <span className={lang === "nl" ? "text-[#ff8835]" : "text-[#b0a090]"}>NL</span>
-              <span className="text-[#e8e0d4]">|</span>
-              <Link href={otherLangPath} className={lang === "en" ? "text-[#ff8835]" : "text-[#b0a090] hover:text-[#ff8835] transition-colors"}>EN</Link>
+            <div className="xl:hidden">
+              <MobileLangSwitcher />
             </div>
 
             <a
@@ -200,12 +278,12 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
               rel="noopener noreferrer"
               className="hidden lg:inline-flex items-center bg-[#ff8835] text-white text-sm font-sans font-semibold rounded-full px-5 py-2.5 hover:bg-[#e8773a] hover:shadow-[0_6px_20px_rgba(255,136,53,0.35)] transition-all duration-300 whitespace-nowrap"
             >
-              Boek Afspraak
+              {lang === "en" ? "Book Appointment" : "Boek Afspraak"}
             </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="xl:hidden p-2 text-[#2a2420] hover:text-[#ff8835] transition-colors cursor-pointer"
-              aria-label={menuOpen ? "Menu sluiten" : "Menu openen"}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -231,7 +309,7 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
           <button
             onClick={() => setMenuOpen(false)}
             className="p-2 text-white hover:text-[#ff8835] transition-colors cursor-pointer"
-            aria-label="Menu sluiten"
+            aria-label="Close menu"
           >
             <X size={22} />
           </button>
@@ -266,12 +344,20 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
             onClick={() => setMenuOpen(false)}
             className="flex justify-center bg-[#ff8835] text-white text-sm font-semibold rounded-full px-8 py-4 hover:bg-[#e8773a] transition-colors"
           >
-            Boek Afspraak
+            {lang === "en" ? "Book Appointment" : "Boek Afspraak"}
           </a>
           <div className="flex items-center justify-center gap-4 text-sm font-medium text-white/60">
-            <span className={lang === "nl" ? "text-[#ff8835]" : ""}>NL</span>
+            {lang === "nl" ? (
+              <span className="text-[#ff8835]">NL</span>
+            ) : (
+              <Link href={otherLangPath} onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">NL</Link>
+            )}
             <span className="text-white/20">|</span>
-            <Link href={otherLangPath} onClick={() => setMenuOpen(false)} className={lang === "en" ? "text-[#ff8835]" : "hover:text-white transition-colors"}>EN</Link>
+            {lang === "en" ? (
+              <span className="text-[#ff8835]">EN</span>
+            ) : (
+              <Link href={otherLangPath} onClick={() => setMenuOpen(false)} className="hover:text-white transition-colors">EN</Link>
+            )}
           </div>
           <div className="text-center text-white/40 text-xs space-y-1">
             <p>+31 6 4609 6641</p>
