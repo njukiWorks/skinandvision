@@ -5,7 +5,7 @@ const services = [
   {
     title: "Ooglidcorrectie",
     description:
-      "Blepharoplastie voor zowel medische als esthetische indicaties. Herstel van gezichtsveld en een frisser, uitgerust uiterlijk door een BIG-geregistreerde oogarts.",
+      "Blepharoplatiek voor zowel medische als esthetische indicaties. Herstel van gezichtsveld en een frisser, uitgerust uiterlijk door een BIG-geregistreerde oogarts.",
     image: "/images/upper-eyelid-correction-2.jpg",
     href: "/behandelingen/ooglidcorrectie",
     label: "Chirurgie",

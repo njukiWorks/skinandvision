@@ -78,7 +78,7 @@ export const tarieven: PriceCategory[] = [
     description:
       "Elk gezicht is uniek en elke situatie vereist een individueel behandelplan. Prijzen kunnen afwijken van de richtprijzen op onze website. Tijdens de consultatie ontvangt u een transparante offerte.",
     procedures: [
-      { name: "Bovenooglidcorrectie (blepharoplastie, beide ogen)", price: 850 },
+      { name: "Bovenooglidcorrectie (Blepharoplatiek, beide ogen)", price: 850 },
       { name: "Onderooglidcorrectie", price: 1050 },
       { name: "Ptosis operatie één oog", price: 1050 },
       { name: "Ptosis operatie beide ogen", price: 1550 },

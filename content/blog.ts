@@ -14,30 +14,30 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "ooglidcorrectie-wat-u-moet-weten",
-    title: "Ooglidcorrectie: Alles wat u moet weten over blepharoplastie",
+    title: "Ooglidcorrectie: Alles wat u moet weten over Blepharoplatiek",
     excerpt:
-      "Overweegt u een ooglidcorrectie? Onze BIG-geregistreerde oogartsen leggen uit wat blepharoplastie inhoudt, wat u kunt verwachten en wanneer het de juiste keuze is.",
+      "Overweegt u een ooglidcorrectie? Onze BIG-geregistreerde oogartsen leggen uit wat Blepharoplatiek inhoudt, wat u kunt verwachten en wanneer het de juiste keuze is.",
     metaDescription:
-      "Overweegt u een ooglidcorrectie? Onze BIG-geregistreerde oogartsen leggen uit wat blepharoplastie inhoudt, wat u kunt verwachten en wanneer het de juiste keuze is.",
+      "Overweegt u een ooglidcorrectie? Onze BIG-geregistreerde oogartsen leggen uit wat Blepharoplatiek inhoudt, wat u kunt verwachten en wanneer het de juiste keuze is.",
     category: "Behandelingen",
     author: "Skin & Vision Clinic",
     date: "2025-03-10",
     readingTime: 6,
-    heroImage: "/images/1.JPG",
+    heroImage: "/images/blog-hero.jpg",
     content: `Hangende oogleden zijn meer dan een esthetisch bezwaar. Voor veel patiënten is een ooglidcorrectie een medische noodzaak die hun dagelijks functioneren en kwaliteit van leven verbetert. Bij Skin & Vision Clinic worden alle ingrepen uitgevoerd door BIG-geregistreerde oogartsen met oculoplastische expertise.
 
 ## Wat is een ooglidcorrectie?
 
-Een ooglidcorrectie, medisch bekend als blepharoplastie, is een chirurgische ingreep waarbij overtollig huid-, spier- of vetweefsel van de oogleden wordt verwijderd of verplaatst.
+Een ooglidcorrectie, medisch bekend als Blepharoplatiek, is een chirurgische ingreep waarbij overtollig huid-, spier- of vetweefsel van de oogleden wordt verwijderd of verplaatst.
 
 We onderscheiden twee varianten:
 
-- **Boven-blepharoplastie:** Verwijdering van overtollige huid van het bovenste ooglid. Dit is de meest uitgevoerde variant.
-- **Onder-blepharoplastie:** Correctie van wallen of zakken onder de ogen, veroorzaakt door uitpuilend vetweefsel.
+- **Boven-Blepharoplatiek:** Verwijdering van overtollige huid van het bovenste ooglid. Dit is de meest uitgevoerde variant.
+- **Onder-Blepharoplatiek:** Correctie van wallen of zakken onder de ogen, veroorzaakt door uitpuilend vetweefsel.
 
 ## Wanneer is een ooglidcorrectie zinvol?
 
-Een blepharoplastie kan zowel medisch als esthetisch geïndiceerd zijn.
+Een Blepharoplatiek kan zowel medisch als esthetisch geïndiceerd zijn.
 
 **Medische indicaties:**
 - Het gezichtsveld wordt belemmerd door hangende oogleden
@@ -56,7 +56,7 @@ Een blepharoplastie kan zowel medisch als esthetisch geïndiceerd zijn.
 Dr. Kloos bespreekt uw klachten, wensen en medische voorgeschiedenis. Er wordt een gedetailleerde beoordeling gemaakt van de ooglidanatomie en er worden foto's gemaakt voor de planning.
 
 **2. De ingreep**
-De blepharoplastie wordt uitgevoerd onder lokale verdoving. De ingreep duurt 45–90 minuten, afhankelijk van of één of beide oogleden worden gecorrigeerd. U bent dezelfde dag thuis.
+De Blepharoplatiek wordt uitgevoerd onder lokale verdoving. De ingreep duurt 45–90 minuten, afhankelijk van of één of beide oogleden worden gecorrigeerd. U bent dezelfde dag thuis.
 
 **3. Herstel**
 - Dagen 1–3: Zwelling, blauwe plekken en een licht branderig gevoel zijn normaal
@@ -81,7 +81,7 @@ Wilt u weten of een ooglidcorrectie voor u geschikt is? Maak een afspraak voor e
     author: "Skin & Vision Clinic",
     date: "2025-04-02",
     readingTime: 5,
-    heroImage: "/images/2.JPG",
+    heroImage: "/images/blog-hero.jpg",
     content: `Bij Skin & Vision Clinic worden botoxbehandelingen uitgevoerd door Dr. R.J.H.M. Kloos, een BIG-geregistreerde oogarts. Wat maakt dat anders? Anatomische precisie, medische veiligheid en jarenlange klinische ervaring met het delicate gebied rondom de ogen.
 
 ## Wat is botox?

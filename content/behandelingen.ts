@@ -15,8 +15,8 @@ export const behandelingen: Treatment[] = [
     slug: "ooglidcorrectie",
     title: "Ooglidcorrectie",
     shortDescription:
-      "Bovenooglidcorrectie (blepharoplastie) voor zowel medische als esthetische indicaties, uitgevoerd door BIG-geregistreerde oogartsen.",
-    fullDescription: `Een ooglidcorrectie, ook wel blepharoplastie genoemd, is een ingreep waarbij overtollig huid, spier- of vetweefsel van de oogleden wordt verwijderd. Bij Skin & Vision Clinic onderscheiden we boven-blepharoplastie en onder-blepharoplastie.
+      "Bovenooglidcorrectie (Blepharoplatiek) voor zowel medische als esthetische indicaties, uitgevoerd door BIG-geregistreerde oogartsen.",
+    fullDescription: `Een ooglidcorrectie, ook wel Blepharoplatiek genoemd, is een ingreep waarbij overtollig huid, spier- of vetweefsel van de oogleden wordt verwijderd. Bij Skin & Vision Clinic onderscheiden we Boven-Blepharoplatiek en Onder-Blepharoplatiek.
 
 **Wanneer is een ooglidcorrectie zinvol?**
 
