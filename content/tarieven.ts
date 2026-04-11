@@ -54,6 +54,25 @@ export const tarieven: PriceCategory[] = [
       "Prijzen zijn richtprijzen. De definitieve kosten worden bepaald tijdens de consultatie op basis van uw persoonlijke behandelplan.",
   },
   {
+    id: "relfydess",
+    title: "Innovatieve Botoxbehandeling met Relfydess",
+    description:
+      "Relfydess is een innovatief botulinetoxine preparaat dat vloeibaar wordt geïnjecteerd en bijzonder geschikt is voor verfijnde behandelingen. Tijdens een consultatie ontvangt u een transparante offerte op maat.",
+    procedures: [
+      { name: "Baby Botox ½ zone (frons, voorhoofd of kraaienpootjes)", price: 180 },
+      { name: "Botox 1 zone (frons, voorhoofd of kraaienpootjes)", price: 250 },
+      { name: "Botox 2 zones (frons, voorhoofd of kraaienpootjes)", price: 390 },
+      { name: "Botox 3 zones (frons, voorhoofd en kraaienpootjes)", price: 540 },
+      { name: "Epiphora (overmatige traanproductie)", price: 150 },
+      { name: "Botox wenkbrauw lifting", price: 180 },
+      { name: "Botox lijntjes op de neus (bunny lines)", price: 180 },
+      { name: "Botox putjes in de kin", price: 180 },
+      { name: "Botox masseter (knarsetanden / kaakklemmen)", price: 390 },
+    ],
+    footnote:
+      "Prijzen zijn richtprijzen. De definitieve kosten worden bepaald tijdens de consultatie op basis van uw persoonlijke behandelplan.",
+  },
+  {
     id: "chirurgische-behandelingen",
     title: "Chirurgische Behandelingen",
     description:
