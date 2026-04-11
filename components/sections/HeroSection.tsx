@@ -10,9 +10,9 @@ const BOOKING_URL =
 const content = {
   nl: {
     label: "BIG-geregistreerde oogartsen · Amsterdam",
-    headlineStart: "Oculoplastische specialist voor",
-    headlineEm: "ogen, oogleden en huid",
-    body: "Skin & Vision Clinic is een gespecialiseerde oculoplastische kliniek met deskundige zorg voor oog-, ooglid- en gezichtsaandoeningen, aangevuld met geavanceerde huidbehandelingen. Wij bieden ooglidcorrecties, traanbuiszorg en botoxbehandelingen — veilig, precies en met natuurlijke resultaten.",
+    headlineStart: "Gespecialiseerde kliniek voor oculoplastiek,",
+    headlineEm: "ooglidchirurgie en Botox",
+    body: "Wij bieden medische en cosmetische behandelingen rond ogen en oogleden, van ooglidcorrecties en ptosischirurgie tot Botoxbehandelingen door oogartsen — altijd met oog voor veiligheid, precisie en een natuurlijk resultaat.",
     cta: "Afspraak Plannen",
     ctaSecondary: "Meer over ons",
     ctaSecondaryHref: "/over-ons",
