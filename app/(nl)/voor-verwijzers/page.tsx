@@ -57,7 +57,7 @@ export default function VoorVerwijzersPage() {
       {/* Page Hero */}
       <section className="relative overflow-hidden bg-[#2a2420] h-[434px] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/images/iStock-512691663.jpg" alt="" fill className="object-cover object-center" priority />
+          <Image src="/images/skin-and-vision-1.png" alt="" fill className="object-cover object-center" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#2a2420]/88 via-[#2a2420]/65 to-[#2a2420]/25" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36">
