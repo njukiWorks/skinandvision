@@ -35,7 +35,7 @@ export default function HeroSection({ lang = "nl" }: { lang?: string }) {
       {/* Right-side image — clean, fades into background on left edge */}
       <div className="absolute right-0 top-0 bottom-0 w-[65%] lg:w-[60%]">
         <Image
-          src="/images/skin-and-vision-1.png"
+          src="/images/iStock.jpg"
           alt="Ooglidcorrectie en botoxbehandelingen Amsterdam"
           fill
           className="object-cover object-[60%_15%]"
