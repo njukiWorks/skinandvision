@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     author: "Skin & Vision Clinic",
     date: "2025-03-10",
     readingTime: 6,
-    heroImage: "/images/blog-hero.jpg",
+    heroImage: "/images/1.JPG",
     content: `Hangende oogleden zijn meer dan een esthetisch bezwaar. Voor veel patiënten is een ooglidcorrectie een medische noodzaak die hun dagelijks functioneren en kwaliteit van leven verbetert. Bij Skin & Vision Clinic worden alle ingrepen uitgevoerd door BIG-geregistreerde oogartsen met oculoplastische expertise.
 
 ## Wat is een ooglidcorrectie?
@@ -81,7 +81,7 @@ Wilt u weten of een ooglidcorrectie voor u geschikt is? Maak een afspraak voor e
     author: "Skin & Vision Clinic",
     date: "2025-04-02",
     readingTime: 5,
-    heroImage: "/images/blog-hero.jpg",
+    heroImage: "/images/2.JPG",
     content: `Bij Skin & Vision Clinic worden botoxbehandelingen uitgevoerd door Dr. R.J.H.M. Kloos, een BIG-geregistreerde oogarts. Wat maakt dat anders? Anatomische precisie, medische veiligheid en jarenlange klinische ervaring met het delicate gebied rondom de ogen.
 
 ## Wat is botox?
