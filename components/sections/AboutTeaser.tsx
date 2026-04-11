@@ -44,7 +44,7 @@ export default function AboutTeaser() {
 
             {/* Experience badge */}
             <div className="absolute top-6 left-2 sm:-left-4 lg:-left-8 bg-[#ff8835] text-white rounded-xl p-4 shadow-lg">
-              <p className="text-2xl font-display font-light leading-none" style={{ fontFamily: "var(--font-display)" }}>5+</p>
+              <p className="text-2xl font-display font-light leading-none" style={{ fontFamily: "var(--font-display)" }}>25+</p>
               <p className="text-[10px] uppercase tracking-wider mt-1 opacity-80">Jaar ervaring</p>
             </div>
           </div>
