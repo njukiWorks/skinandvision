@@ -18,7 +18,7 @@ export default function OverOnsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#2a2420] h-[434px] flex items-center">
+      <section className="relative overflow-hidden bg-[#2a2420] h-[474px] flex items-center">
         <div className="absolute inset-0">
           <Image src="/images/skin-and-vision-about-us-img.jpg" alt="" fill className="object-cover object-top" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#2a2420]/85 via-[#2a2420]/60 to-[#2a2420]/25" />

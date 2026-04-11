@@ -39,7 +39,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
       />
 
       {/* Hero */}
-      <section className="relative h-[320px] lg:h-[434px]">
+      <section className="relative h-[320px] lg:h-[474px]">
         <Image src={treatment.image} alt={treatment.title} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0d0c]/60 to-[#0f0d0c]/80" />
         <div className="absolute inset-0 flex items-end max-w-7xl mx-auto px-6 lg:px-12 pb-16">

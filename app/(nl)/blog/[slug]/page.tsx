@@ -44,7 +44,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       />
 
       {/* Hero */}
-      <section className="relative h-[320px] lg:h-[434px]">
+      <section className="relative h-[320px] lg:h-[474px]">
         <Image src={post.heroImage} alt={post.title} fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0d0c]/40 to-[#0f0d0c]/80" />
         <div className="absolute inset-0 flex items-end max-w-4xl mx-auto px-6 lg:px-12 pb-16">

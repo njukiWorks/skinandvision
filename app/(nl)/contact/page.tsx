@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#f2ede6] h-[434px] flex items-center">
+      <section className="relative overflow-hidden bg-[#f2ede6] h-[474px] flex items-center">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
