@@ -43,8 +43,8 @@ export default function OverOnsPage() {
           <ScrollReveal>
             <div className="relative h-[480px] rounded-2xl overflow-hidden">
               <Image
-                src="/images/dr.RoelJHMKloos.jpg"
-                alt="Dr. R.J.H.M. Kloos — BIG-geregistreerd oogarts"
+                src="/images/3.JPG"
+                alt="Skin & Vision Clinic Amsterdam"
                 fill
                 className="object-cover object-top"
               />
@@ -52,39 +52,31 @@ export default function OverOnsPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15} className="flex flex-col gap-8">
-            <SectionLabel>De specialist</SectionLabel>
+            <SectionLabel>De kliniek</SectionLabel>
             <h2
               className="text-[#2a2420] font-display font-light leading-tight"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 3rem)" }}
             >
-              Dr. R.J.H.M. Kloos
+              Skin &amp; Vision Clinic
             </h2>
 
-            <div className="space-y-4 text-[#b0a090] text-sm leading-relaxed">
+            <div className="space-y-3 text-[#b0a090] text-sm leading-relaxed">
               <p>
-                Dr. R.J.H.M. Kloos is een BIG-geregistreerde oogarts met meer dan 28 jaar klinische
-                ervaring. Na zijn opleiding oogheelkunde heeft hij zich gespecialiseerd in
-                oculoplastische chirurgie — het vakgebied op het snijvlak van oogheelkunde en
-                plastische chirurgie.
+                Skin &amp; Vision Clinic is een gespecialiseerde oculoplastische kliniek in Amsterdam,
+                gericht op medische en esthetische zorg voor ogen, oogleden en het gezicht — van
+                ooglidcorrecties en ptosischirurgie tot traanbuiszorg en botoxbehandelingen.
               </p>
               <p>
-                Zijn specialisatie omvat ooglidcorrectie (blepharoplastie), ptosischirurgie,
-                entropion- en ectropioncorrectie, en botoxbehandelingen voor zowel medische
-                als esthetische indicaties.
-              </p>
-              <p>
-                Bij Skin & Vision Clinic staat de persoonlijke benadering centraal. Iedere patiënt
-                krijgt een uitgebreid consultatie, waarbij wensen, medische voorgeschiedenis en
-                de meest geschikte behandelopties worden besproken.
+                Iedere patiënt ontvangt een persoonlijk consult en behandelplan, afgestemd op de
+                individuele wensen en medische situatie.
               </p>
             </div>
 
             <ul className="space-y-2">
               {[
-                "BIG-geregistreerd oogarts (since 1996)",
-                "Lid NVvO — Nederlandse Vereniging voor Oogheelkunde",
-                "Oculoplastische specialisatie",
-                "Meer dan 5.000 behandelde patiënten",
+                "Gespecialiseerde oculoplastische kliniek in Amsterdam",
+                "BIG-geregistreerde oogartsen",
+                "Medische én esthetische behandelingen",
                 "9.9/10 op ZorgkaartNederland",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm text-[#2a2420]">

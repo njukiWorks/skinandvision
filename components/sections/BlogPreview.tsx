@@ -49,7 +49,7 @@ export default function BlogPreview() {
                   src={post.heroImage}
                   alt={post.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0d0c]/40 to-transparent" />
                 <span className="absolute top-4 left-4 bg-[#ff8835] text-white text-[10px] font-semibold px-3 py-1.5 rounded-full uppercase tracking-wide">

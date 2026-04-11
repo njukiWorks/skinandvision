@@ -25,7 +25,7 @@ export default function AboutTeaser() {
             <div className="hidden sm:block absolute -top-8 -left-8 w-48 h-48 bg-[#ff8835]/10 rounded-full blur-2xl" />
             <div className="relative h-[380px] sm:h-[500px] lg:h-[640px] rounded-2xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
               <Image
-                src="/images/skin-and-vision-about-us-img.jpg"
+                src="/images/dr.RoelJHMKloos.jpg"
                 alt="Dr. R.J.H.M. Kloos — BIG-geregistreerd oogarts bij Skin & Vision Clinic Amsterdam"
                 fill
                 className="object-cover object-top"
@@ -39,12 +39,12 @@ export default function AboutTeaser() {
                 <span className="text-yellow-400 text-base">★★★★★</span>
               </div>
               <p className="text-[#2a2420] text-xl font-display font-light" style={{ fontFamily: "var(--font-display)" }}>9.9 / 10</p>
-              <p className="text-[#b0a090] text-[11px] leading-snug mt-0.5">ZorgkaartNederland<br />28+ beoordelingen</p>
+              <p className="text-[#b0a090] text-[11px] leading-snug mt-0.5">ZorgkaartNederland<br />5+ beoordelingen</p>
             </div>
 
             {/* Experience badge */}
             <div className="absolute top-6 left-2 sm:-left-4 lg:-left-8 bg-[#ff8835] text-white rounded-xl p-4 shadow-lg">
-              <p className="text-2xl font-display font-light leading-none" style={{ fontFamily: "var(--font-display)" }}>28+</p>
+              <p className="text-2xl font-display font-light leading-none" style={{ fontFamily: "var(--font-display)" }}>5+</p>
               <p className="text-[10px] uppercase tracking-wider mt-1 opacity-80">Jaar ervaring</p>
             </div>
           </div>
@@ -63,20 +63,21 @@ export default function AboutTeaser() {
                 fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
               }}
             >
-              Medische expertise &amp;{" "}
-              <em className="italic text-[#ff8835]">esthetische precisie</em>
+              Dr. R.J.H.M. Kloos —{" "}
+              <em className="italic text-[#ff8835]">oculoplastisch specialist</em>
             </h2>
 
             <div className="space-y-4 text-[#b0a090] text-sm leading-relaxed">
               <p>
-                Dr. R.J.H.M. Kloos is een BIG-geregistreerde oogarts met meer dan 28 jaar
-                ervaring in de oculoplastische chirurgie. Hij studeerde geneeskunde aan de
-                Universiteit Leiden en specialiseerde zich in oogheelkunde aan het VU Medisch Centrum.
+                Dr. R.J.H.M. Kloos is een BIG-geregistreerde oogarts en oculoplastisch specialist
+                met diepgaande expertise in chirurgische en esthetische behandelingen van de ogen,
+                oogleden en het gezicht. Hij studeerde geneeskunde aan de Universiteit Leiden en
+                specialiseerde zich aan het VU Medisch Centrum Amsterdam.
               </p>
               <p>
-                Bij Skin &amp; Vision Clinic staat persoonlijke zorg centraal. Of u nu bent doorverwezen
-                voor een medische ooglidcorrectie of zelf kiest voor een esthetische behandeling —
-                wij bieden zorg op maat, in een rustige en professionele omgeving.
+                Met ervaring opgedaan in het AMC, UMC Utrecht, Rotterdam Eye Hospital en Maastricht UMC+
+                biedt dr. Kloos bij Skin &amp; Vision Clinic persoonlijke zorg op maat — of u nu komt
+                voor een medische ingreep of een esthetische behandeling.
               </p>
             </div>
 

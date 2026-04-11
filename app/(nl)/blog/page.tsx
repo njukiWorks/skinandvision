@@ -50,7 +50,7 @@ export default function BlogPage() {
                       src={post.heroImage}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
                     <span className="absolute top-4 left-4 bg-[#ff8835] text-white text-xs font-sans font-semibold px-3 py-1 rounded-full">
                       {post.category}

@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 28, suffix: "+", label: "Jaar ervaring", sub: "Sinds 1996 actief" },
-  { value: 5000, suffix: "+", label: "Patiënten behandeld", sub: "Tevreden patiënten" },
+  { value: 5, suffix: "+", label: "Jaar ervaring", sub: "Sinds 2019 actief" },
+  { value: 50, suffix: "+", label: "Patiënten behandeld", sub: "Tevreden patiënten" },
   { value: 9.9, suffix: "/10", label: "ZorgkaartNederland", sub: "Gemiddelde beoordeling" },
 ];
 

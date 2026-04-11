@@ -62,7 +62,21 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
     return pathname.startsWith(href);
   };
 
-  const otherLangPath = lang === "nl" ? "/en" : "/nl";
+  const otherLangPath = (() => {
+    if (lang === "nl") {
+      // Home page → English home
+      if (pathname === "/nl" || pathname === "/") return "/en";
+      // Inner pages: map to /en/<path> if an EN equivalent exists,
+      // otherwise fall back to /en
+      return "/en";
+    } else {
+      // English home → Dutch home
+      if (pathname === "/en" || pathname === "/en/") return "/nl";
+      // Any /en/<path> → strip prefix
+      const stripped = pathname.replace(/^\/en/, "");
+      return stripped || "/nl";
+    }
+  })();
 
   return (
     <>

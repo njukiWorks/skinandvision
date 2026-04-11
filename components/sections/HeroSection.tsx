@@ -7,13 +7,35 @@ import Link from "next/link";
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
 
-export default function HeroSection() {
+const content = {
+  nl: {
+    label: "BIG-geregistreerde oogartsen · Amsterdam",
+    headlineStart: "Oculoplastische specialist voor",
+    headlineEm: "ogen, oogleden en huid",
+    body: "Skin & Vision Clinic is een gespecialiseerde oculoplastische kliniek met deskundige zorg voor oog-, ooglid- en gezichtsaandoeningen, aangevuld met geavanceerde huidbehandelingen. Wij bieden ooglidcorrecties, traanbuiszorg en botoxbehandelingen — veilig, precies en met natuurlijke resultaten.",
+    cta: "Afspraak Plannen",
+    ctaSecondary: "Meer over ons",
+    ctaSecondaryHref: "/over-ons",
+  },
+  en: {
+    label: "BIG-registered ophthalmologists · Amsterdam",
+    headlineStart: "Oculoplastic specialist for",
+    headlineEm: "eyes, eyelids & skin",
+    body: "Skin & Vision Clinic is an Oculoplastic Specialist Clinic offering expert care for eye, eyelid, and facial conditions, alongside advanced skin treatments. We provide services including eyelid surgery, tear duct care, and Botox treatments, delivering safe, precise, and natural-looking results.",
+    cta: "Book Appointment",
+    ctaSecondary: "About us",
+    ctaSecondaryHref: "/en",
+  },
+};
+
+export default function HeroSection({ lang = "nl" }: { lang?: string }) {
+  const t = content[lang as keyof typeof content] ?? content.nl;
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#edeae4]">
       {/* Right-side image — clean, fades into background on left edge */}
       <div className="absolute right-0 top-0 bottom-0 w-[65%] lg:w-[60%]">
         <Image
-          src="/images/iStock-493975368.jpg"
+          src="/images/skin-and-vision-1.png"
           alt="Ooglidcorrectie en botoxbehandelingen Amsterdam"
           fill
           className="object-cover object-[60%_15%]"
@@ -26,17 +48,17 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[#edeae4]/70 lg:hidden" />
       </div>
 
-      {/* Content — sits directly on background, no card */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pt-[100px] pb-32 lg:pb-40">
+      {/* Content — vertically centred, all fits above the fold */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pt-[90px] pb-10 lg:pb-16">
         <div className="max-w-[525px]">
           {/* Label */}
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[#a09070] text-[11px] uppercase tracking-[0.28em] font-sans font-medium mb-5"
+            className="text-[#a09070] text-[11px] uppercase tracking-[0.28em] font-sans font-medium mb-3"
           >
-            BIG-geregistreerde oogartsen · Amsterdam
+            {t.label}
           </motion.p>
 
           {/* Headline */}
@@ -44,14 +66,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-[#1e1a18] font-display font-light leading-[1.08] tracking-tight mb-6"
+            className="text-[#1e1a18] font-display font-light leading-[1.08] tracking-tight mb-4"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.6rem, 4.5vw, 4.2rem)",
+              fontSize: "clamp(2.2rem, 4vw, 3.8rem)",
             }}
           >
-            Verbeter uw uitstraling met{" "}
-            <em className="italic text-[#ff8835]">esthetische precisie</em>
+            {t.headlineStart}{" "}
+            <em className="italic text-[#ff8835]">{t.headlineEm}</em>
           </motion.h1>
 
           {/* Body */}
@@ -59,11 +81,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-[#7a6a58] text-[15px] leading-relaxed mb-10"
+            className="text-[#7a6a58] text-[14px] leading-relaxed mb-7"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            Ooglidcorrecties en botoxbehandelingen door een BIG-geregistreerde
-            oogarts. Meer dan 28 jaar medische expertise in Amsterdam.
+            {t.body}
           </motion.p>
 
           {/* CTAs */}
@@ -79,13 +100,13 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-[#2a2420] text-white font-sans font-semibold rounded-full px-7 py-3.5 text-sm hover:bg-[#ff8835] hover:shadow-[0_8px_32px_rgba(255,136,53,0.35)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
             >
-              Afspraak Plannen
+              {t.cta}
             </a>
             <Link
-              href="/over-ons"
+              href={t.ctaSecondaryHref}
               className="inline-flex items-center gap-2 text-[#7a6a58] font-sans text-sm font-medium hover:text-[#ff8835] transition-colors duration-300 group whitespace-nowrap"
             >
-              Meer over ons
+              {t.ctaSecondary}
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300 shrink-0">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
