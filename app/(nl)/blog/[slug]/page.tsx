@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { buildBlogSchema } from "@/lib/seo";
+import { buildBlogSchema, buildBreadcrumbSchema } from "@/lib/seo";
 import { blogPosts, getBlogPostBySlug } from "@/content/blog";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CTABanner from "@/components/sections/CTABanner";
@@ -20,6 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.metaDescription,
     path: `/blog/${slug}`,
     image: post.heroImage,
+    type: "article",
+    keywords: [post.category, "medisch blog", "oogheelkunde nieuws"],
   });
 }
 
@@ -35,12 +37,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     url: `https://skinandvision.nl/blog/${post.slug}`,
     image: `https://skinandvision.nl${post.heroImage}`,
   });
+  const breadcrumb = buildBreadcrumbSchema([
+    { name: "Home", url: "https://skinandvision.nl" },
+    { name: "Blog", url: "https://skinandvision.nl/blog" },
+    { name: post.title, url: `https://skinandvision.nl/blog/${post.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
       {/* Hero */}

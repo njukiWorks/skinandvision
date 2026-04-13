@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
-import { buildProcedureSchema } from "@/lib/seo";
+import { buildProcedureSchema, buildBreadcrumbSchema } from "@/lib/seo";
 import { behandelingen, getTreatmentBySlug } from "@/content/behandelingen";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CTABanner from "@/components/sections/CTABanner";
@@ -29,13 +29,22 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
   const treatment = getTreatmentBySlug(slug);
   if (!treatment) notFound();
 
-  const schema = buildProcedureSchema(treatment.title, treatment.shortDescription);
+  const schema = buildProcedureSchema(treatment.title, treatment.shortDescription, treatment.slug);
+  const breadcrumb = buildBreadcrumbSchema([
+    { name: "Home", url: "https://skinandvision.nl" },
+    { name: "Behandelingen", url: "https://skinandvision.nl/behandelingen" },
+    { name: treatment.title, url: `https://skinandvision.nl/behandelingen/${treatment.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
       {/* Hero */}

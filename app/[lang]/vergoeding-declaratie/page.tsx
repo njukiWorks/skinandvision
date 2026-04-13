@@ -14,17 +14,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   });
 }
 
-const insurers = [
-  "Zilveren Kruis / OHRA",
-  "CZ / Delta Lloyd / OHRA Zorg",
-  "Menzis",
-  "VGZ / IZZ / IZA",
-  "DSW / Stad Holland",
-  "ONVZ / PNO Zorg",
-  "Zorg en Zekerheid",
-  "ASR / De Amersfoortse",
-];
-
 const steps = [
   {
     num: "01",
@@ -131,25 +120,6 @@ export default async function InsurancePage({ params }: { params: Promise<{ lang
 
             {/* Insurance info */}
             <div>
-              <div className="bg-[#faf8f5] rounded-2xl p-8 mb-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="w-6 h-px bg-[#ff8835]" />
-                  <span className="text-[#ff8835] text-xs uppercase tracking-[0.2em] font-semibold">Contracted insurers</span>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {insurers.map((v) => (
-                    <div key={v} className="flex items-center gap-2 text-sm text-[#2a2420]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff8835] shrink-0" />
-                      {v}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-[#b0a090] mt-4 leading-relaxed">
-                  Does your insurer offer a restitution policy? Then a non-contracted provider
-                  will also be (partially) reimbursed.
-                </p>
-              </div>
-
               <div className="bg-[#fff0e6] border border-[#ff8835]/20 rounded-2xl p-8">
                 <h3 className="text-[#2a2420] font-semibold mb-3">Questions about coverage?</h3>
                 <p className="text-[#b0a090] text-sm leading-relaxed mb-5">

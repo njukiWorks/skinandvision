@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Lora } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import MetaPixel from "@/components/analytics/MetaPixel";
+import { clinicSchema, websiteSchema } from "@/lib/seo";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -32,12 +35,29 @@ export const metadata: Metadata = {
     template: "%s | Skin & Vision Clinic",
   },
   description:
-    "BIG-geregistreerde oogartsen gespecialiseerd in ooglidcorrectie en botoxbehandelingen in Amsterdam. Persoonlijke zorg, medische expertise.",
+    "BIG-geregistreerde oogartsen gespecialiseerd in ooglidcorrectie en botoxbehandelingen in Amsterdam. 28+ jaar ervaring, 9.9/10 ZorgkaartNederland.",
+  keywords: [
+    "ooglidcorrectie Amsterdam",
+    "blepharoplastiek",
+    "botoxbehandelingen oogarts",
+    "BIG-geregistreerde oogarts Amsterdam",
+    "oculoplastische chirurgie",
+    "ptosis correctie",
+    "oogarts Amsterdam",
+    "Dr. Kloos oogarts",
+    "hangen oogleden behandeling",
+    "blepharospasme behandeling",
+    "Skin & Vision Clinic",
+  ],
+  authors: [{ name: "Dr. R.J.H.M. Kloos", url: "https://skinandvision.nl/over-ons" }],
+  creator: "Skin & Vision Clinic",
+  publisher: "Skin & Vision Clinic",
   openGraph: {
     siteName: "Skin & Vision Clinic",
     locale: "nl_NL",
     type: "website",
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -51,15 +71,36 @@ export default function RootLayout({
       lang="nl"
       className={`${cormorant.variable} ${dmSans.variable} ${lora.variable}`}
     >
-      {GTM_ID && (
-        <head>
+      <head>
+        <meta name="theme-color" content="#ff8835" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }}
+        />
+        {GTM_ID && (
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
             }}
           />
-        </head>
-      )}
+        )}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C01BBE28ZX"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-C01BBE28ZX');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen flex flex-col">
         {GTM_ID && (
           <noscript>
@@ -71,6 +112,7 @@ export default function RootLayout({
             />
           </noscript>
         )}
+        <MetaPixel />
         {children}
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { trackBookingClick } from "@/lib/analytics";
 
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
@@ -98,6 +99,7 @@ export default function HeroSection({ lang = "nl" }: { lang?: string }) {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackBookingClick("hero")}
               className="inline-flex items-center bg-[#2a2420] text-white font-sans font-semibold rounded-full px-7 py-3.5 text-sm hover:bg-[#ff8835] hover:shadow-[0_8px_32px_rgba(255,136,53,0.35)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
             >
               {t.cta}

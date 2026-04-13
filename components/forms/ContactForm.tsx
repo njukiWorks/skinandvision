@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { trackLead } from "@/lib/analytics";
 
 const schema = z.object({
   naam: z.string().min(2, "Vul uw naam in"),
@@ -56,6 +57,7 @@ export default function ContactForm({ lang = "nl" }: ContactFormProps) {
       });
       if (!res.ok) throw new Error("Verzenden mislukt");
       setStatus("success");
+      trackLead(data.behandeling);
       reset();
     } catch {
       setStatus("error");

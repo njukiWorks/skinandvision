@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { trackBookingClick, trackPhoneClick } from "@/lib/analytics";
 
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
@@ -101,6 +104,7 @@ export default function Footer() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackBookingClick("footer")}
                 className="inline-flex items-center gap-2 bg-[#ff8835] text-white text-sm font-semibold rounded-full px-6 py-2.5 hover:bg-[#e8773a] transition-colors"
               >
                 Boek Afspraak
@@ -118,7 +122,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="block text-[#faf8f5] font-medium text-xs uppercase tracking-wider mb-1">Telefoon</span>
-                <a href="tel:+31646096641" className="text-[#b0a090] hover:text-[#ff8835] transition-colors">+31 6 4609 6641</a>
+                <a href="tel:+31646096641" onClick={trackPhoneClick} className="text-[#b0a090] hover:text-[#ff8835] transition-colors">+31 6 4609 6641</a>
               </li>
               <li>
                 <span className="block text-[#faf8f5] font-medium text-xs uppercase tracking-wider mb-1">E-mail</span>
