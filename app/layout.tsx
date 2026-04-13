@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Lora } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import MetaPixel from "@/components/analytics/MetaPixel";
 import { clinicSchema, websiteSchema } from "@/lib/seo";
@@ -88,18 +87,15 @@ export default function RootLayout({
             }}
           />
         )}
-        <Script
+        <script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-C01BBE28ZX"
-          strategy="afterInteractive"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-C01BBE28ZX');
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C01BBE28ZX');`,
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         {GTM_ID && (
