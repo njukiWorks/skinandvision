@@ -14,46 +14,18 @@ const ZORGKAART_URL =
 
 const reviews = [
   {
-    name: "M. van der Berg",
-    treatment: "Bovenooglidcorrectie",
+    name: "Jos Grouter",
+    treatment: "",
     rating: 5,
-    date: "Maart 2025",
-    text: "Na jaren last te hebben gehad van hangende oogleden die mijn gezichtsveld belemmerden, heb ik eindelijk de stap gezet. Dr. Kloos heeft mij uitstekend geholpen. Het resultaat is geweldig — ik zie er uitgerust en fris uit. De communicatie vóór en na de ingreep was perfect.",
+    date: "4 april 2026",
+    text: "Zeer fijn personeel. Zeer professionele kliniek. De behandeling viel erg mee. Goede nazorg.",
   },
   {
-    name: "A. Jansen",
-    treatment: "Botoxbehandelingen",
+    name: "Paula Brink-wille",
+    treatment: "",
     rating: 5,
-    date: "Februari 2025",
-    text: "Ik was aanvankelijk sceptisch over botox, maar de expertise van Dr. Kloos als oogarts gaf me het vertrouwen dat ik zocht. Het resultaat is subtiel en volledig natuurlijk. De behandeling was vrijwel pijnloos en het team was bijzonder vriendelijk.",
-  },
-  {
-    name: "T. Smit",
-    treatment: "Ptosis correctie",
-    rating: 5,
-    date: "Januari 2025",
-    text: "Professionele kliniek met een warm onthaal. Dr. Kloos nam ruim de tijd voor mijn consultatie en legde alles helder uit. De ingreep verliep vlekkeloos en het herstel was snel. Ik ben zeer tevreden met het resultaat.",
-  },
-  {
-    name: "L. de Vries",
-    treatment: "Onderooglidcorrectie",
-    rating: 5,
-    date: "December 2024",
-    text: "Uitstekende zorg van begin tot eind. Duidelijke uitleg vooraf over de procedure en mogelijke risico's. Na de ingreep voelde ik me volledig op mijn gemak en het herstel verliep vlot. Heel blij met het resultaat!",
-  },
-  {
-    name: "R. Bakker",
-    treatment: "Ooglidcorrectie (beide ogen)",
-    rating: 5,
-    date: "November 2024",
-    text: "Dr. Kloos is een echte vakman. Hij luistert goed naar uw wensen en geeft eerlijk advies. De kliniek is rustig en professioneel ingericht. Ik zou hem zeker aanbevelen aan iedereen die een ooglidcorrectie overweegt.",
-  },
-  {
-    name: "C. van Houten",
-    treatment: "Botox perioculair",
-    rating: 5,
-    date: "Oktober 2024",
-    text: "Als oogarts heeft Dr. Kloos een unieke kennis van de anatomie rondom de ogen. Dit geeft extra vertrouwen bij botoxbehandelingen in dat gebied. Het resultaat is natuurlijk en precies wat ik wilde. Absoluut terug voor de volgende behandeling.",
+    date: "9 maart 2026",
+    text: "Zeer vriendelijk ontvangen en de behandeling heb ik als zeer prettige ervaring als professioneel ervaren.",
   },
 ];
 
@@ -100,7 +72,7 @@ export default function ErvaringenPage() {
       {/* Reviews grid */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl">
             {reviews.map((review) => (
               <div
                 key={review.name}
@@ -117,7 +89,9 @@ export default function ErvaringenPage() {
                 </p>
                 <div className="border-t border-[#e8e0d4] pt-4">
                   <p className="text-[#2a2420] text-sm font-semibold">{review.name}</p>
-                  <p className="text-[#ff8835] text-xs mt-0.5 font-medium">{review.treatment}</p>
+                  {review.treatment && (
+                    <p className="text-[#ff8835] text-xs mt-0.5 font-medium">{review.treatment}</p>
+                  )}
                 </div>
               </div>
             ))}
