@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
+import ReviewForm from "@/components/forms/ReviewForm";
 
 export const metadata = buildMetadata({
   title: "Ervaringen & Beoordelingen",
@@ -138,31 +139,21 @@ export default function ErvaringenPage() {
 
       {/* Share your experience */}
       <section className="bg-[#f2ede6] py-20 lg:py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
+        <div className="max-w-2xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-[#ff8835]" />
             <span className="text-[#ff8835] text-xs uppercase tracking-[0.25em] font-sans font-semibold">Uw ervaring</span>
-            <span className="w-8 h-px bg-[#ff8835]" />
           </div>
           <h2
-            className="text-[#2a2420] font-display font-light mb-4"
+            className="text-[#2a2420] font-display font-light mb-3"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 3rem)" }}
           >
             Deel uw <em className="italic text-[#ff8835]">ervaring</em>
           </h2>
-          <p className="text-[#b0a090] mb-8 leading-relaxed">
-            Uw mening is voor ons van groot belang. Of u nu tevreden bent over een behandeling,
-            de service of de sfeer in onze kliniek — wij horen het graag. Uw beoordeling helpt
-            anderen een weloverwogen keuze te maken.
+          <p className="text-[#b0a090] mb-8 leading-relaxed text-sm">
+            Uw mening is voor ons van groot belang. Uw beoordeling helpt anderen een weloverwogen keuze te maken.
           </p>
-          <a
-            href={ZORGKAART_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#ff8835] text-white font-semibold rounded-full px-8 py-4 hover:bg-[#e8773a] hover:shadow-[0_12px_32px_rgba(255,136,53,0.4)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Schrijf een beoordeling
-          </a>
+          <ReviewForm />
         </div>
       </section>
     </>

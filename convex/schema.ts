@@ -33,4 +33,13 @@ export default defineSchema({
     subscribed_at: v.number(),
     active: v.boolean(),
   }).index("by_email", ["email"]),
+
+  reviews: defineTable({
+    name: v.string(),
+    rating: v.number(),
+    treatment: v.optional(v.string()),
+    text: v.string(),
+    created_at: v.number(),
+    approved: v.boolean(),
+  }).index("by_approved_and_created_at", ["approved", "created_at"]),
 });

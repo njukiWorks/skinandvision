@@ -5,25 +5,18 @@ const ZORGKAART_URL =
 
 const testimonials = [
   {
-    name: "M. van der Berg",
-    occupation: "Lerares",
+    name: "Jos Grouter",
+    date: "4 april 2026",
     rating: 5,
-    text: "Na jaren last te hebben gehad van hangende oogleden die mijn gezichtsveld belemmerden, heb ik eindelijk de stap gezet. Dr. Kloos heeft mij uitstekend geholpen. Het resultaat is geweldig — ik zie er uitgerust en fris uit.",
-    initials: "MB",
+    text: "Zeer fijn personeel. Zeer professionele kliniek. De behandeling viel erg mee. Goede nazorg.",
+    initials: "JG",
   },
   {
-    name: "A. Jansen",
-    occupation: "Bedrijfsadviseur",
+    name: "Paula Brink-wille",
+    date: "9 maart 2026",
     rating: 5,
-    text: "Ik was aanvankelijk sceptisch over botox, maar de expertise van Dr. Kloos als oogarts gaf me het vertrouwen dat ik zocht. Het resultaat is subtiel en volledig natuurlijk. Ik ben zeer tevreden.",
-    initials: "AJ",
-  },
-  {
-    name: "T. Smit",
-    occupation: "Huisarts",
-    rating: 5,
-    text: "Professionele kliniek met een warm onthaal. Dr. Kloos nam ruim de tijd voor mijn consultatie en legde alles helder uit. De ingreep verliep vlekkeloos en het herstel was snel.",
-    initials: "TS",
+    text: "Zeer vriendelijk ontvangen en de behandeling heb ik als zeer prettige ervaring als professioneel ervaren.",
+    initials: "PB",
   },
 ];
 
@@ -75,7 +68,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
@@ -97,7 +90,7 @@ export default function TestimonialsSection() {
                   </div>
                   <div>
                     <p className="text-[#2a2420] text-sm font-semibold">{t.name}</p>
-                    <p className="text-[#ff8835] text-[11px] font-medium">{t.occupation}</p>
+                    <p className="text-[#b0a090] text-[11px] font-medium">{t.date}</p>
                   </div>
                 </div>
                 <div className="text-yellow-400 text-sm">{"★".repeat(t.rating)}</div>
