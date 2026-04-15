@@ -16,22 +16,22 @@ const steps = [
   {
     num: "01",
     title: "Verwijzing aanvragen",
-    desc: "Vraag een verwijzing aan bij uw huisarts of medisch specialist voor een behandeling bij Skin & Vision Clinic.",
+    desc: "Vraag een verwijzing aan bij uw huisarts of medisch specialist voor een behandeling bij Skin & Vision Clinics.",
   },
   {
     num: "02",
     title: "Afspraak maken",
-    desc: "Maak een afspraak via ons online systeem of bel ons. Stuur uw verwijzing mee bij de eerste afspraak.",
+    desc: "Maak eenvoudig een afspraak via ons online systeem of neem telefonisch contact met ons op. Stuur uw verwijzing mee voorafgaand aan uw eerste afspraak.",
   },
   {
     num: "03",
     title: "Behandeling",
-    desc: "U ontvangt de behandeling van onze BIG-geregistreerde oogarts. Wij regelen de rest.",
+    desc: "U wordt behandeld door onze BIG-geregistreerde oogarts. Wij begeleiden u zorgvuldig gedurende het gehele traject.",
   },
   {
     num: "04",
-    title: "Declaratie",
-    desc: "Wij declareren rechtstreeks bij uw zorgverzekeraar. U hoeft zelf niets te doen.",
+    title: "Declaratie en afhandeling",
+    desc: "U ontvangt de factuur via Infomedics. Deze dient u in bij uw zorgverzekeraar. Na ontvangst van de afrekenspecificatie stuurt u deze aan ons door. Vervolgens betaalt u alleen het vergoede bedrag en een eventueel bedrag dat onder uw eigen risico of eigen bijdrage valt.",
   },
 ];
 

@@ -139,9 +139,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#b0a090] text-xs">
           <p>© {new Date().getFullYear()} Skin &amp; Vision Clinic Amsterdam. Alle rechten voorbehouden.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-end">
             <Link href="/privacy" className="hover:text-[#ff8835] transition-colors">Privacybeleid</Link>
-            <Link href="/disclaimer" className="hover:text-[#ff8835] transition-colors">Disclaimer</Link>
+            <Link href="/algemene-voorwaarden-medisch" className="hover:text-[#ff8835] transition-colors">Voorwaarden Medisch</Link>
+            <Link href="/algemene-voorwaarden-cosmetisch" className="hover:text-[#ff8835] transition-colors">Voorwaarden Cosmetisch</Link>
             <span className="text-white/20">KvK: Amsterdam</span>
           </div>
         </div>
