@@ -143,7 +143,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-[#ff8835] transition-colors">Privacybeleid</Link>
             <Link href="/algemene-voorwaarden-medisch" className="hover:text-[#ff8835] transition-colors">Voorwaarden Medisch</Link>
             <Link href="/algemene-voorwaarden-cosmetisch" className="hover:text-[#ff8835] transition-colors">Voorwaarden Cosmetisch</Link>
-            <span className="text-white/20">KvK: Amsterdam</span>
+            <span className="text-white/20">KvK: 98350226</span>
           </div>
         </div>
       </div>

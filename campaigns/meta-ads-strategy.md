@@ -1,5 +1,5 @@
 # Meta Ads Campaign Strategy — Skin & Vision Clinic
-**Platforms:** Facebook + Instagram | **Budget:** €300–€400/mo (40% of total) | **Markets:** NL, BE/LU, UK, Scandinavia
+**Platforms:** Facebook + Instagram | **Budget:** €240/mo (40% of €600 total) | **Markets:** NL, BE/LU, UK, Scandinavia
 
 ---
 
@@ -34,7 +34,7 @@ Meta Business Manager
 ## Campaign 1: Ooglidcorrectie
 
 **Objective:** Leads / Conversions (contact form)
-**Budget:** €8/day (~€240/mo)
+**Budget:** €3/day (~€90/mo)
 **Bid strategy:** Lowest Cost → Cost Cap (€60) after learning phase
 **Placements:** Facebook Feed, Instagram Feed, Instagram Stories, Reels
 
@@ -141,7 +141,7 @@ Meta Business Manager
 ## Campaign 2: Botoxbehandelingen
 
 **Objective:** Leads / Conversions
-**Budget:** €6/day (~€180/mo)
+**Budget:** €2.50/day (~€75/mo)
 **Bid strategy:** Lowest Cost
 
 ### Ad Set 1 — Beauty & Anti-Aging (NL/BE)
@@ -231,7 +231,7 @@ Meta Business Manager
 ## Campaign 3: Andere Behandelingen (Lead Gen)
 
 **Objective:** Lead Generation (native Meta lead form — no website required)
-**Budget:** €3/day (~€90/mo)
+**Budget:** €1.50/day (~€45/mo)
 **Format:** Lead Ads (instant form) — lower friction for medical queries
 
 ### Ad Set — Medische Interesse (NL/BE)
@@ -270,7 +270,7 @@ Meta Business Manager
 ## Campaign 4: Ooglidcorrectie — English (UK + Scandinavia)
 
 **Objective:** Leads
-**Budget:** €3/day (~€90/mo)
+**Budget:** €1/day (~€30/mo)
 **Language:** English
 **Locations:** United Kingdom, Sweden, Norway, Denmark, Finland
 

@@ -1,5 +1,5 @@
 # Google Ads Campaign Strategy — Skin & Vision Clinic
-**Account:** skinandvision.nl | **Budget:** €500–€600/mo (60% of total) | **Markets:** NL, BE/LU, UK, Scandinavia
+**Account:** skinandvision.nl | **Budget:** €360/mo (60% of €600 total) | **Markets:** NL, BE/LU, UK, Scandinavia
 
 ---
 
@@ -14,7 +14,7 @@ Google Ads Account
 │   └── Ad Group 4: Bovenooglidcorrectie
 │
 ├── Campaign 2: GOOG_Search_Botox_NL-BE
-│   ├── Ad Group 1: Botox Oogarts
+│   ├── Ad Group 1: Botox Precisie
 │   ├── Ad Group 2: Botox Kraaienpootjes
 │   ├── Ad Group 3: Botox Rimpels Amsterdam
 │   └── Ad Group 4: Wenkbrauw Lifting Botox
@@ -36,7 +36,7 @@ Google Ads Account
 ## Campaign 1: Ooglidcorrectie (Dutch — NL + BE/LU)
 
 **Objective:** Conversions (booking form submissions + phone calls)
-**Daily budget:** €8–€12
+**Daily budget:** €5
 **Bid strategy:** Maximize Conversions → switch to Target CPA (€60–€80) after 30+ conversions
 **Targeting:** Netherlands + Belgium + Luxembourg
 **Language:** Dutch
@@ -139,20 +139,20 @@ infectie, huisarts, ziekenhuis [unless you want hospital traffic]
 ## Campaign 2: Botoxbehandelingen (Dutch — NL + BE/LU)
 
 **Objective:** Conversions
-**Daily budget:** €7–€10
+**Daily budget:** €4
 **Bid strategy:** Maximize Conversions → Target CPA €40–€60
 **Targeting:** Netherlands + Belgium + Luxembourg
 
 ### Keywords
 
-**Ad Group 1: Botox Oogarts**
+**Ad Group 1: Botox Precisie**
 ```
-[botox oogarts]
-[botox door oogarts]
-"botox specialist oogarts"
-"botox oogarts amsterdam"
-+botox +oogarts +precisie
-"veilig botox oogarts"
+[botox amsterdam]
+[botox specialist]
+"botox specialist amsterdam"
+"botox kliniek amsterdam"
++botox +precisie +amsterdam
+"veilig botox amsterdam"
 ```
 
 **Ad Group 2: Kraaienpootjes**
@@ -161,7 +161,7 @@ infectie, huisarts, ziekenhuis [unless you want hospital traffic]
 [kraaienpootjes behandeling]
 "kraaienpootjes wegwerken"
 "kraaienpootjes botox amsterdam"
-+kraaienpootjes +botox +oogarts
++kraaienpootjes +botox
 "kraaienpootjes injectie specialist"
 ```
 
@@ -195,7 +195,7 @@ goedkoop, schoonheidsspecialist, thuis, zelf, cursus, opleiding
 
 **Ad 1 (Primary)**
 - Headlines:
-  1. Botox door Oogarts | Amsterdam
+  1. Precisie Botox | Amsterdam
   2. Precisie Rondom de Ogen
   3. BIG-geregistreerde Specialist
   4. Kraaienpootjes v.a. €200
@@ -222,7 +222,7 @@ goedkoop, schoonheidsspecialist, thuis, zelf, cursus, opleiding
 ## Campaign 3: Andere Behandelingen (Dutch — NL + BE/LU)
 
 **Objective:** Leads (contact form)
-**Daily budget:** €4–€6
+**Daily budget:** €2
 **Bid strategy:** Maximize Conversions
 
 ### Keywords
@@ -280,7 +280,7 @@ goedkoop, schoonheidsspecialist, thuis, zelf, cursus, opleiding
 ## Campaign 4: Eyelid Surgery — English (UK + Scandinavia)
 
 **Objective:** Leads
-**Daily budget:** €5–€8
+**Daily budget:** €1
 **Language:** English
 **Targeting:** United Kingdom, Sweden, Norway, Denmark, Finland
 
@@ -348,13 +348,11 @@ In Google Ads → Tools → Conversions, create:
 
 | Campaign | Daily Budget | Monthly Est. |
 |---|---|---|
-| Ooglidcorrectie NL/BE | €12 | €360 |
-| Botoxbehandelingen NL/BE | €9 | €270 |
-| Andere Behandelingen NL/BE | €5 | €150 |
-| English Markets | €6 | €180 |
-| **TOTAL** | **€32** | **~€960** |
-
-*Start with Dutch campaigns only (€26/day = ~€780/mo) if staying closer to €500–€600/mo.*
+| Ooglidcorrectie NL/BE | €5 | €150 |
+| Botoxbehandelingen NL/BE | €4 | €120 |
+| Andere Behandelingen NL/BE | €2 | €60 |
+| English Markets | €1 | €30 |
+| **TOTAL** | **€12** | **~€360** |
 
 ---
 
