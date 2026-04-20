@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { trackBookingClick, trackPhoneClick } from "@/lib/analytics";
 
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
@@ -64,6 +67,7 @@ export default function CTABanner({
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackBookingClick("cta_banner")}
             className="inline-flex items-center gap-2 bg-[#ff8835] text-white font-semibold rounded-full px-10 py-4 text-sm hover:bg-[#e8773a] hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(255,136,53,0.45)] transition-all duration-300"
           >
             Afspraak Maken
@@ -73,6 +77,7 @@ export default function CTABanner({
           </a>
           <a
             href="tel:+31646096641"
+            onClick={trackPhoneClick}
             className="inline-flex items-center gap-2 border border-white/20 text-white/80 text-sm font-medium rounded-full px-8 py-4 hover:border-[#ff8835] hover:text-[#ff8835] transition-all duration-300"
           >
             <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">

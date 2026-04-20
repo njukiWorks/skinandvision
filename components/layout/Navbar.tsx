@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import { trackBookingClick } from "@/lib/analytics";
 
 const BOOKING_URL =
   "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
@@ -276,6 +277,7 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackBookingClick("navbar")}
               className="hidden lg:inline-flex items-center bg-[#ff8835] text-white text-sm font-sans font-semibold rounded-full px-5 py-2.5 hover:bg-[#e8773a] hover:shadow-[0_6px_20px_rgba(255,136,53,0.35)] transition-all duration-300 whitespace-nowrap"
             >
               {lang === "en" ? "Book Appointment" : "Boek Afspraak"}
@@ -341,7 +343,7 @@ export default function Navbar({ lang = "nl" }: NavbarProps) {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { trackBookingClick("mobile_menu"); setMenuOpen(false); }}
             className="flex justify-center bg-[#ff8835] text-white text-sm font-semibold rounded-full px-8 py-4 hover:bg-[#e8773a] transition-colors"
           >
             {lang === "en" ? "Book Appointment" : "Boek Afspraak"}

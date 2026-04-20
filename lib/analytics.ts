@@ -28,54 +28,32 @@ function fbTrack(event: string, params?: Record<string, unknown>) {
   window.fbq("track", event, params);
 }
 
-/**
- * Fire when contact form is successfully submitted.
- */
+const AW_ID = "AW-17615536133";
+const AW_BOOKING  = `${AW_ID}/7580879924`;
+const AW_LEAD     = `${AW_ID}/7581270228`;
+const AW_PHONE    = `${AW_ID}/7580880401`;
+
+function gtagConversion(send_to: string, value: number) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", "conversion", { send_to, currency: "EUR", value });
+}
+
 export function trackLead(treatment?: string) {
-  gtagEvent("generate_lead", {
-    currency: "EUR",
-    value: 30,
-    treatment: treatment ?? "unknown",
-  });
-
-  fbTrack("Lead", {
-    content_name: treatment ?? "Contact Form",
-    currency: "EUR",
-    value: 30,
-  });
+  gtagEvent("generate_lead", { currency: "EUR", value: 30, treatment: treatment ?? "unknown" });
+  gtagConversion(AW_LEAD, 30);
+  fbTrack("Lead", { content_name: treatment ?? "Contact Form", currency: "EUR", value: 30 });
 }
 
-/**
- * Fire when user clicks the ClinicMinds booking link.
- */
 export function trackBookingClick(source?: string) {
-  gtagEvent("click_booking", {
-    currency: "EUR",
-    value: 50,
-    source: source ?? "unknown",
-  });
-
-  fbTrack("Schedule", {
-    content_name: source ?? "Booking CTA",
-    currency: "EUR",
-    value: 50,
-  });
+  gtagEvent("click_booking", { currency: "EUR", value: 50, source: source ?? "unknown" });
+  gtagConversion(AW_BOOKING, 50);
+  fbTrack("Schedule", { content_name: source ?? "Booking CTA", currency: "EUR", value: 50 });
 }
 
-/**
- * Fire when user clicks the phone number.
- */
 export function trackPhoneClick() {
-  gtagEvent("click_phone", {
-    currency: "EUR",
-    value: 20,
-  });
-
-  fbTrack("Contact", {
-    content_name: "Phone Click",
-    currency: "EUR",
-    value: 20,
-  });
+  gtagEvent("click_phone", { currency: "EUR", value: 20 });
+  gtagConversion(AW_PHONE, 20);
+  fbTrack("Contact", { content_name: "Phone Click", currency: "EUR", value: 20 });
 }
 
 /**

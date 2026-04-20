@@ -5,9 +5,7 @@ import { buildProcedureSchema, buildBreadcrumbSchema } from "@/lib/seo";
 import { behandelingen, getTreatmentBySlug } from "@/content/behandelingen";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CTABanner from "@/components/sections/CTABanner";
-
-const BOOKING_URL =
-  "https://schedule.clinicminds.com/?clinic=636e9065-78db-11f0-953e-0667c42d6c5b&hide-logo";
+import BookingButton from "@/components/ui/BookingButton";
 
 export function generateStaticParams() {
   return behandelingen.map((t) => ({ slug: t.slug }));
@@ -134,14 +132,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
                   </li>
                 )}
               </ul>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex justify-center bg-[#ff8835] text-white font-sans font-medium rounded-full px-8 py-3.5 text-sm hover:bg-[#ffaa6b] transition-colors"
-              >
-                Afspraak Maken
-              </a>
+              <BookingButton source="treatment_sidebar" />
             </div>
           </div>
         </div>
