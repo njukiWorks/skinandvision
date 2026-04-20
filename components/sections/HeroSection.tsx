@@ -41,7 +41,8 @@ export default function HeroSection({ lang = "nl" }: { lang?: string }) {
           fill
           className="object-cover object-[60%_15%]"
           priority
-          quality={95}
+          quality={75}
+          sizes="(max-width: 768px) 100vw, 65vw"
         />
         {/* Fade left edge into background color — this creates the seamless blend */}
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-[#edeae4] via-[#edeae4]/60 to-transparent" />
