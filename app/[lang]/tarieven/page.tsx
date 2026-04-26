@@ -64,7 +64,7 @@ const pricingEn = [
     description:
       "Every face is unique and every situation requires an individual treatment plan. Prices may differ from the guide prices on our website. During the consultation you will receive a transparent quote.",
     procedures: [
-      { name: "Upper eyelid correction (Blepharoplasty, both eyes)", price: 850 },
+      { name: "Upper eyelid correction (Blepharoplasty, both eyes)", price: 900 },
       { name: "Lower eyelid correction", price: 1050 },
       { name: "Ptosis surgery one eye", price: 1050 },
       { name: "Ptosis surgery both eyes", price: 1550 },
