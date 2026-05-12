@@ -126,10 +126,12 @@ export default async function ForReferrersPageEn({ params }: { params: Promise<{
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:info@skinandvision.nl?subject=Patient%20referral"
-                  className="inline-flex items-center gap-2 bg-[#ff8835] text-white font-semibold rounded-full px-8 py-3.5 text-sm hover:bg-[#e8773a] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,136,53,0.3)] transition-all duration-300"
+                  href="https://app.zivver.com/l/start/db4174ad-b4b4-4f64-91ec-44a9a4fb6cba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: "#ff8835", borderRadius: "4px", color: "white", fontFamily: "Lato, serif", fontSize: "17px", fontWeight: 600, padding: "13px 16px" }}
                 >
-                  Send referral by email
+                  Send a referral
                 </a>
                 <a
                   href="tel:+31646096641"
@@ -138,6 +140,16 @@ export default async function ForReferrersPageEn({ params }: { params: Promise<{
                   Call us: +31 6 4609 6641
                 </a>
               </div>
+              <p className="mt-5 text-sm">
+                <a
+                  href="/docs/Dutch_Patiënteninstructie download form.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#ff8835" }}
+                >
+                  <b>Download patiënteninstructie + routebeschrijving</b>
+                </a>
+              </p>
             </div>
 
             {/* Indications */}
