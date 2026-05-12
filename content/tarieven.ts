@@ -57,7 +57,7 @@ export const tarieven: PriceCategory[] = [
     id: "relfydess",
     title: "Innovatieve Botoxbehandeling met Relfydess",
     description:
-      "Relfydess is een innovatief botulinetoxine preparaat dat vloeibaar wordt geïnjecteerd en bijzonder geschikt is voor verfijnde behandelingen. Tijdens een consultatie ontvangt u een transparante offerte op maat.",
+      "Relfydess is een innovatieve botulinetoxinebehandeling die bekendstaat om de snelle werking en het effect dat tot 6 maanden kan aanhouden. Ideaal voor wie kiest voor een verfijnd en natuurlijk resultaat. Tijdens een consult stellen wij een persoonlijk behandelplan op en ontvangt u een transparante offerte op maat.",
     procedures: [
       { name: "Baby Botox ½ zone (frons, voorhoofd of kraaienpootjes)", price: 180 },
       { name: "Botox 1 zone (frons, voorhoofd of kraaienpootjes)", price: 250 },

@@ -43,7 +43,7 @@ const pricingEn = [
     label: "Injectables",
     title: "Innovative Botox Treatment with Relfydess",
     description:
-      "Relfydess is an innovative botulinum toxin preparation injected in liquid form, particularly suitable for refined treatments. During a consultation you will receive a transparent personalised quote.",
+      "Relfydess is an innovative botulinum toxin treatment known for its rapid action and effects that can last up to 6 months. It is ideal for those who choose a refined and natural result. During a consultation, we will draw up a personalized treatment plan and you will receive a transparent, customized quote.",
     procedures: [
       { name: "Baby Botox ½ zone (frown, forehead or crow's feet)", price: 180 },
       { name: "Botox 1 zone (frown, forehead or crow's feet)", price: 250 },
