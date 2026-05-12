@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 
 export const submit = mutation({
@@ -14,5 +14,16 @@ export const submit = mutation({
       created_at: Date.now(),
       approved: false,
     });
+  },
+});
+
+export const getApproved = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db
+      .query("reviews")
+      .withIndex("by_approved_and_created_at", (q) => q.eq("approved", true))
+      .order("desc")
+      .collect();
   },
 });

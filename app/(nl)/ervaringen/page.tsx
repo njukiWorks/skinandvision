@@ -9,10 +9,12 @@ export const metadata = buildMetadata({
   path: "/ervaringen",
 });
 
+export const revalidate = 60;
+
 const ZORGKAART_URL =
   "https://www.zorgkaartnederland.nl/zorgverlener/oogarts-kloos-r-j-h-m-126894";
 
-const reviews = [
+const staticReviews = [
   {
     name: "Jos Grouter",
     treatment: "",
@@ -29,7 +31,39 @@ const reviews = [
   },
 ];
 
-export default function ErvaringenPage() {
+interface ConvexReview {
+  _id: string;
+  name: string;
+  rating: number;
+  treatment?: string;
+  text: string;
+  created_at: number;
+}
+
+async function getApprovedReviews(): Promise<ConvexReview[]> {
+  const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
+  if (!convexUrl) return [];
+  try {
+    const res = await fetch(`${convexUrl}/api/query`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path: "reviews:getApproved", args: {}, format: "json" }),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.value ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function formatDate(ts: number) {
+  return new Date(ts).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+}
+
+export default async function ErvaringenPage() {
+  const dynamicReviews = await getApprovedReviews();
   return (
     <>
       {/* Hero */}
@@ -72,8 +106,8 @@ export default function ErvaringenPage() {
       {/* Reviews grid */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl">
-            {reviews.map((review) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {staticReviews.map((review) => (
               <div
                 key={review.name}
                 className="bg-[#faf8f5] rounded-2xl p-8 flex flex-col gap-5 hover:shadow-[0_8px_48px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
@@ -83,6 +117,28 @@ export default function ErvaringenPage() {
                     {"★".repeat(review.rating)}
                   </div>
                   <span className="text-[#b0a090] text-xs">{review.date}</span>
+                </div>
+                <p className="text-[#2a2420] text-sm leading-relaxed italic flex-1">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <div className="border-t border-[#e8e0d4] pt-4">
+                  <p className="text-[#2a2420] text-sm font-semibold">{review.name}</p>
+                  {review.treatment && (
+                    <p className="text-[#ff8835] text-xs mt-0.5 font-medium">{review.treatment}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+            {dynamicReviews.map((review) => (
+              <div
+                key={review._id}
+                className="bg-[#faf8f5] rounded-2xl p-8 flex flex-col gap-5 hover:shadow-[0_8px_48px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex text-yellow-400 text-lg gap-0.5">
+                    {"★".repeat(review.rating)}
+                  </div>
+                  <span className="text-[#b0a090] text-xs">{formatDate(review.created_at)}</span>
                 </div>
                 <p className="text-[#2a2420] text-sm leading-relaxed italic flex-1">
                   &ldquo;{review.text}&rdquo;
