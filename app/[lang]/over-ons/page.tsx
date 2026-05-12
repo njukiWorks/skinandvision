@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return buildMetadata({
     title: "About Us | Skin & Vision Clinic Amsterdam",
     description:
-      "Learn more about Dr. R.J.H.M. Kloos and Skin & Vision Clinic. BIG-registered ophthalmologist with over 28 years of experience in eyelid correction and botox treatments.",
+      "Learn more about Doctor R.J.H.M. Kloos and Skin & Vision Clinic. BIG-registered ophthalmologist with over 28 years of experience in eyelid correction and botox treatments.",
     path: "/en/over-ons",
   });
 }
@@ -127,7 +127,7 @@ export default async function AboutPageEn({ params }: { params: Promise<{ lang: 
             </blockquote>
             <div className="flex items-center justify-center gap-4 mt-8">
               <span className="w-10 h-px bg-[#ff8835]" />
-              <p className="text-[#b0a090] text-sm font-sans">Dr. R.J.H.M. Kloos</p>
+              <p className="text-[#b0a090] text-sm font-sans">Doctor Roel Kloos</p>
               <span className="w-10 h-px bg-[#ff8835]" />
             </div>
           </ScrollReveal>

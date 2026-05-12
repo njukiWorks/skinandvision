@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "blepharospasme behandeling",
     "Skin & Vision Clinic",
   ],
-  authors: [{ name: "Dr. R.J.H.M. Kloos", url: "https://skinandvision.nl/over-ons" }],
+  authors: [{ name: "Dokter R.J.H.M. Kloos", url: "https://skinandvision.nl/over-ons" }],
   creator: "Skin & Vision Clinic",
   publisher: "Skin & Vision Clinic",
   openGraph: {

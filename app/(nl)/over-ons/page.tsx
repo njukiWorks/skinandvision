@@ -10,7 +10,7 @@ const ZORGKAART_URL =
 export const metadata = buildMetadata({
   title: "Over Ons | Skin & Vision Clinic Amsterdam",
   description:
-    "Leer meer over Dr. R.J.H.M. Kloos en Skin & Vision Clinic. BIG-geregistreerde oogarts met meer dan 28 jaar ervaring in ooglidcorrectie en botoxbehandelingen.",
+    "Leer meer over Dokter R.J.H.M. Kloos en Skin & Vision Clinic. BIG-geregistreerde oogarts met meer dan 28 jaar ervaring in ooglidcorrectie en botoxbehandelingen.",
   path: "/over-ons",
 });
 
@@ -121,7 +121,7 @@ export default function OverOnsPage() {
             </blockquote>
             <div className="flex items-center justify-center gap-4 mt-8">
               <span className="w-10 h-px bg-[#ff8835]" />
-              <p className="text-[#b0a090] text-sm font-sans">Dr. R.J.H.M. Kloos</p>
+              <p className="text-[#b0a090] text-sm font-sans">Dokter Roel Kloos</p>
               <span className="w-10 h-px bg-[#ff8835]" />
             </div>
           </ScrollReveal>

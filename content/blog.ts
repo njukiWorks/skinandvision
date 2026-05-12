@@ -66,7 +66,7 @@ De Blepharoplatiek wordt uitgevoerd onder lokale verdoving. De ingreep duurt 45�
 
 ## Waarom kiezen voor een oogarts?
 
-Dr. R.J.H.M. Kloos is BIG-geregistreerd oogarts met oculoplastische specialisatie. Dit snijvlak van oogheelkunde en plastische chirurgie is essentieel bij ingrepen rondom de ogen. Een oogarts beschikt over diepgaande kennis van de anatomie, fysiologie en mogelijke complicaties van het ooggebied — kennis die buiten de oogheelkunde zeldzaam is.
+Dokter R.J.H.M. Kloos is BIG-geregistreerd oogarts met oculoplastische specialisatie. Dit snijvlak van oogheelkunde en plastische chirurgie is essentieel bij ingrepen rondom de ogen. Een oogarts beschikt over diepgaande kennis van de anatomie, fysiologie en mogelijke complicaties van het ooggebied — kennis die buiten de oogheelkunde zeldzaam is.
 
 Wilt u weten of een ooglidcorrectie voor u geschikt is? Maak een afspraak voor een persoonlijk consultatie.`,
   },
@@ -82,7 +82,7 @@ Wilt u weten of een ooglidcorrectie voor u geschikt is? Maak een afspraak voor e
     date: "2025-04-02",
     readingTime: 5,
     heroImage: "/images/2.JPG",
-    content: `Bij Skin & Vision Clinic worden botoxbehandelingen uitgevoerd door Dr. R.J.H.M. Kloos, een BIG-geregistreerde oogarts. Wat maakt dat anders? Anatomische precisie, medische veiligheid en jarenlange klinische ervaring met het delicate gebied rondom de ogen.
+    content: `Bij Skin & Vision Clinic worden botoxbehandelingen uitgevoerd door Dokter R.J.H.M. Kloos, een BIG-geregistreerde oogarts. Wat maakt dat anders? Anatomische precisie, medische veiligheid en jarenlange klinische ervaring met het delicate gebied rondom de ogen.
 
 ## Wat is botox?
 

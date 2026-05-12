@@ -26,7 +26,7 @@ export default function AboutTeaser() {
             <div className="relative h-[380px] sm:h-[500px] lg:h-[640px] rounded-2xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
               <Image
                 src="/images/dr.RoelJHMKloos.jpg"
-                alt="Dr. R.J.H.M. Kloos — BIG-geregistreerd oogarts bij Skin & Vision Clinic Amsterdam"
+                alt="Dokter R.J.H.M. Kloos — BIG-geregistreerd oogarts bij Skin & Vision Clinic Amsterdam"
                 fill
                 className="object-cover object-top"
               />
@@ -63,13 +63,13 @@ export default function AboutTeaser() {
                 fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
               }}
             >
-              Dr. R.J.H.M. Kloos —{" "}
+              Dokter Roel Kloos —{" "}
               <em className="italic text-[#ff8835]">oculoplastisch specialist</em>
             </h2>
 
             <div className="space-y-4 text-[#b0a090] text-sm leading-relaxed">
               <p>
-                Dr. R.J.H.M. Kloos is een BIG-geregistreerde oogarts en oculoplastisch specialist
+                Dokter R.J.H.M. Kloos is een BIG-geregistreerde oogarts en oculoplastisch specialist
                 met diepgaande expertise in chirurgische en esthetische behandelingen van de ogen,
                 oogleden en het gezicht. Hij studeerde geneeskunde aan de Universiteit Leiden en
                 specialiseerde zich aan het VU Medisch Centrum Amsterdam.
