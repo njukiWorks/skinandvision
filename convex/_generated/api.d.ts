@@ -11,6 +11,7 @@
 import type * as blog from "../blog.js";
 import type * as contact from "../contact.js";
 import type * as newsletter from "../newsletter.js";
+import type * as reviews from "../reviews.js";
 
 import type {
   ApiFromModules,
@@ -22,6 +23,7 @@ declare const fullApi: ApiFromModules<{
   blog: typeof blog;
   contact: typeof contact;
   newsletter: typeof newsletter;
+  reviews: typeof reviews;
 }>;
 
 /**
