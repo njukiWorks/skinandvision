@@ -14,7 +14,7 @@ export const submit = mutation({
     const id = await ctx.db.insert("reviews", {
       ...args,
       created_at: Date.now(),
-      approved: false,
+      approved: true,
     });
     await ctx.scheduler.runAfter(0, internal.reviews.sendNotification, args);
     return id;
